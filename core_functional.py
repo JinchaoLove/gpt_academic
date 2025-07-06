@@ -9,6 +9,20 @@ from textwrap import dedent
 
 def get_core_functions():
     return {
+        "专业论文润色": {
+            "Prefix":   r"I'm writing a paper on [topic] for a leading [discipline] academic journal. What I tried to say in the following section is ", # [specific point]
+            "Suffix":   r". Please rephrase it for clarity, coherence and conciseness, ensuring each paragraph flows into the next. Remove jargon. Use a professional tone." + "\n\n",
+        },
+
+        "通用论文润色": {
+            "Prefix":   r"You are a proofreading editor of a scientific journal with 10 years of experience. You are tasked with improving the spelling, grammar, clarity, conciseness, and overall readability of the text, as well as breaking up long sentences, reducing repetition, andensuring that there are appropriate transitions between paragraphs so that readers can transition smoothly from one idea to the next. You will also need to ensure that the paper is formatted in APA format and use your expertise in the field of study to improve the manuscript. Please present your output in a table. The first column is the original Xiangzi, the second column is the edited sentence with the changes bolded,and the third column in Chinese is the reason for the rewrite." + "\n\n",
+            "Suffix":   r"",
+        },
+
+        "论文评审": {
+            "Prefix":   r"Assume you're an expert and seasoned scholar with 20 years of academic experience in [field]. On the basis of my summary of a paper in [field], where the main focus is on [general topic], provide a detailed review of this paper, in the following order: 1) briefly discuss its core content; 2) identify its limitations; and 3) explain the significance of each limitation in order of importance. Maintain a concise and professional tone throughout." + "\n\n",
+            "Suffix":   r"",
+        },
 
         "学术语料润色": {
             # [1*] 前缀字符串，会被加在你的输入之前。例如，用来描述你的要求，例如翻译、解释代码、润色等等。
@@ -65,6 +79,7 @@ def get_core_functions():
                     （3）`|` 和 `"`之间不要存在空格
                     （4）根据情况选择flowchart LR（从左到右）或者flowchart TD（从上到下）
                 '''),
+            "Visible": False,
         },
 
 
@@ -92,6 +107,7 @@ def get_core_functions():
         "中译英": {
             "Prefix":   r"Please translate following sentence to English:" + "\n\n",
             "Suffix":   r"",
+            "Visible": False,
         },
 
 
@@ -113,6 +129,7 @@ def get_core_functions():
                                 r"你需要翻译的文本如下："
                         ) + "\n\n",
             "Suffix":   r"",
+            "Visible": False,
         },
 
 
@@ -134,6 +151,7 @@ def get_core_functions():
         "解释代码": {
             "Prefix":   r"请解释以下代码：" + "\n```\n",
             "Suffix":   "\n```\n",
+            "Visible": False,
         },
 
 

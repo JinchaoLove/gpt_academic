@@ -417,6 +417,16 @@ model_info = {
         "token_cnt": get_token_num_gpt4,
     },
 
+    "azure-gpt-4o": {
+        "fn_with_ui": chatgpt_ui,
+        "fn_without_ui": chatgpt_noui,
+        "endpoint": azure_endpoint,
+        "has_multimodal_capacity": True,
+        "max_token": 8192,
+        "tokenizer": tokenizer_gpt4,
+        "token_cnt": get_token_num_gpt4,
+    },
+
     # 智谱AI
     "glm-4": {
         "fn_with_ui": zhipu_ui,
